@@ -1,31 +1,15 @@
-// const person: {
-//     name: string,
-//     age: number
-// }={
-
-enum Role {ADMIN = 0, READ_ONLY = 1, AUTHOR = 2}
-
-const person : {
-    name: string,           // string
-    age: number,            // number
-    hobbies: string[],      // array
-    role: [number, string], // typle
-    enumRole: Role
-}={
-    name: "jonas",
-    age: 29,
-    hobbies: ["coding", "beer", "thee"],
-    role: [2, 'author'],
-    enumRole: Role.ADMIN
-};
-
-person.role.push('admin');
-// person.role[1] = 10;
-
-let favoriteActivities: string[]; // can use any type to have lists wiht all types of objects
-favoriteActivities = ['Sports'];
-
-for (const hobby of person.hobbies) {
-    console.log(hobby.toUpperCase())
+function combine(n1: number | string, n2: number | string) {
+    let result;
+    if (typeof n1 === 'number' && typeof n2 === 'number'){
+        result = n1 + n2;
+    } else {
+        result = n1.toString() + n2.toString();
+    }
+    
+    return result;
 }
-console.log(person.name);
+
+const combinedAges = combine("nnerg", "cancer");
+console.log(combinedAges);
+
+const combinedNames = combine('Max', 3);
